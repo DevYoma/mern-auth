@@ -50,8 +50,6 @@ const Profile = () => {
     )
   }
 
-
-
   return (
     <div className="p-3 max-w-lg mx-auto">
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
@@ -65,7 +63,7 @@ const Profile = () => {
           onChange={(e: any) => setImage(e.target.files[0])}
         />
         <img 
-          src={currentUser.profilePicture} 
+          src={formData?.profilePicture || currentUser.profilePicture} 
           alt="profile" 
           className="mt-2 h-24 w-24 self-center cursor-pointer rounded-full object-cover"  
           // @ts-ignore
