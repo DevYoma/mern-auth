@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { signInFailure, signInStart, signInSuccess } from "../redux/user/userSlice";
 import { useDispatch, useSelector } from 'react-redux';
+import OAuth from "../components/OAuth";
 
 const SignIn = () => {
 
@@ -88,6 +89,7 @@ const SignIn = () => {
         >
           {loading ? 'Loading...' : 'Sign In'}
         </button>
+        <OAuth />
       </form>
 
       <div className="flex gap-2 mt-5">
@@ -96,7 +98,7 @@ const SignIn = () => {
           <span className="text-blue-500">Sign Up</span>
         </Link>
       </div>
-      <p className="text-red-700 mt-5">{error ? error || "Something went wrong!" : ''}</p>
+      {/* <p className="text-red-700 mt-5">{error ? error || "Something went wrong!" : ''}</p> */}
     </div>
   )
 }
